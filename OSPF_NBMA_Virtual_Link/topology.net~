@@ -1,0 +1,290 @@
+autostart = False
+version = 0.8.3.1
+[127.0.0.1:7200]
+    workingdir = /home/thomas/Downloads
+    udp = 10000
+    [[2621]]
+        image = /home/thomas/GNS3/Images/c2600-adventerprisek9-mz.124-25b.image
+        ram = 128
+        idlepc = 0x805198a0
+        ghostios = True
+        chassis = 2621
+    [[ROUTER R4]]
+        model = 2621
+        console = 2004
+        aux = 2504
+        cnfg = configs/R4.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R6 s0/0
+        slot1 = NM-4E
+        e1/0 = SW1 3
+        x = 374.293505963
+        y = -116.752308679
+        z = 1.0
+        hx = 17.5857864376
+        hy = -25.0
+    [[ROUTER R5]]
+        model = 2621
+        console = 2006
+        aux = 2505
+        cnfg = configs/R5.cfg
+        slot1 = NM-4E
+        e1/0 = SW1 4
+        x = 381.364573775
+        y = 74.1665222414
+        z = 1.0
+        hx = 20.9142135624
+        hy = 42.8822509939
+    [[ROUTER R6]]
+        model = 2621
+        console = 2007
+        aux = 2507
+        cnfg = configs/R6.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R4 s0/0
+        slot1 = NM-4E
+        x = 614.709811567
+        y = -113.923881554
+        z = 1.0
+    [[ROUTER R1]]
+        model = 2621
+        console = 2005
+        aux = 2501
+        cnfg = configs/R1.cfg
+        wic0/0 = WIC-2T
+        s0/0 = FR1 1
+        f0/0 = nio_tap:tap2
+        slot1 = NM-4E
+        x = -230.639610307
+        y = -34.4852813742
+        z = 1.0
+    [[ROUTER R2]]
+        model = 2621
+        console = 2002
+        aux = 2502
+        cnfg = configs/R2.cfg
+        wic0/0 = WIC-2T
+        s0/0 = FR1 2
+        slot1 = NM-4E
+        e1/0 = SW1 1
+        x = 104.17871555
+        y = -116.752308679
+        z = 1.0
+    [[ROUTER R3]]
+        model = 2621
+        console = 2003
+        aux = 2503
+        cnfg = configs/R3.cfg
+        wic0/0 = WIC-2T
+        s0/0 = FR1 3
+        slot1 = NM-4E
+        e1/0 = SW1 2
+        x = 104.17871555
+        y = 65.6812408671
+        z = 1.0
+        hx = 20.9142135624
+        hy = 47.124891681
+    [[FRSW FR1]]
+        1:101 = 2:201
+        1:103 = 3:301
+        2:201 = 1:101
+        2:203 = 3:302
+        3:301 = 1:103
+        3:302 = 2:203
+        1 = R1 s0/0
+        2 = R2 s0/0
+        3 = R3 s0/0
+        x = -58.0269119346
+        y = -37.6421356237
+        z = 1.0
+    [[ETHSW SW1]]
+        1 = access 1 R2 e1/0
+        2 = access 1 R3 e1/0
+        3 = access 1 R4 e1/0
+        4 = access 1 R5 e1/0
+        x = 240.271644663
+        y = -17.4142135624
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "Area 2"
+        x = 527.501658765
+        y = -161.406637612
+    [[NOTE 2]]
+        text = "10.0.0.0/29"
+        x = -63.6396103068
+        y = -107.666522241
+    [[NOTE 3]]
+        text = ".3"
+        x = 97.5807358037
+        y = 36.5832611207
+    [[NOTE 4]]
+        text = ".2"
+        x = 73.5391052434
+        y = -100.59545443
+    [[NOTE 5]]
+        text = ".1"
+        x = -161.220346111
+        y = -52.5121933088
+    [[NOTE 6]]
+        text = ".2"
+        x = 592.555482634
+        y = -82.2106781187
+    [[NOTE 7]]
+        text = ".1"
+        x = 448.305699272
+        y = -87.8675323681
+    [[NOTE 8]]
+        text = "172.16.1.0/30"
+        x = 476.58997052
+        y = -65.2401153702
+    [[NOTE 9]]
+        text = ".4"
+        x = 345.068109219
+        y = -97.7670273048
+    [[NOTE 10]]
+        text = ".3"
+        x = 352.139177031
+        y = 67.6959594929
+    [[NOTE 11]]
+        text = ".2"
+        x = 182.433549546
+        y = 63.4533188058
+    [[NOTE 12]]
+        text = ".1"
+        x = 179.605122421
+        y = -102.009667992
+    [[NOTE 13]]
+        text = "10.1.1.0/29"
+        x = 237.587878479
+        y = -113.323376491
+    [[NOTE 14]]
+        text = "Area 1"
+        x = 248.901586978
+        y = -133.122366364
+    [[NOTE 15]]
+        text = "Area 0"
+        x = -42.4264068712
+        y = -134.536579926
+    [[NOTE 16]]
+        text = "s0/0"
+        x = -40.8455711154
+        y = -12.0063624577
+        interface = R6 s0/0
+    [[NOTE 17]]
+        text = "4"
+        x = 72.4490789429
+        y = 20.6432261345
+        interface = SW1 4
+    [[NOTE 18]]
+        text = "3"
+        x = 73.7771400389
+        y = -5.73566667527
+        interface = SW1 3
+    [[NOTE 19]]
+        text = "2"
+        x = -28.5278628218
+        y = 18.1455379904
+        interface = SW1 2
+    [[NOTE 20]]
+        text = "1"
+        x = -23.6467001492
+        y = -14.0474292312
+        interface = SW1 1
+    [[NOTE 21]]
+        text = "e1/0"
+        x = -2.53486538048
+        y = -27.8980601305
+        interface = R5 e1/0
+    [[NOTE 22]]
+        text = "s0/0"
+        x = 70.0760184937
+        y = -10.4616749739
+        interface = R4 s0/0
+    [[NOTE 23]]
+        text = "e1/0"
+        x = 0.379714210591
+        y = 45.1498802376
+        interface = R4 e1/0
+    [[NOTE 24]]
+        text = "e1/0"
+        x = 53.1872423883
+        y = -36.7140804854
+        interface = R3 e1/0
+    [[NOTE 25]]
+        text = "s0/0"
+        x = -42.7264568697
+        y = 7.66063341807
+        interface = R3 s0/0
+    [[NOTE 26]]
+        text = "e1/0"
+        x = 51.1345068404
+        y = 52.0474292312
+        interface = R2 e1/0
+    [[NOTE 27]]
+        text = "s0/0"
+        x = -9.81187789853
+        y = 45.3633917232
+        interface = R2 s0/0
+    [[NOTE 28]]
+        text = "3"
+        x = 65.8711178104
+        y = 20.8688038334
+        interface = FR1 3
+    [[NOTE 29]]
+        text = "2"
+        x = 65.4834507738
+        y = -4.10603241029
+        interface = FR1 2
+    [[NOTE 30]]
+        text = "1"
+        x = -14.1958782808
+        y = 28.4231339122
+        interface = FR1 1
+    [[NOTE 31]]
+        text = "nio_tap:tap2"
+        x = 29.3832668552
+        y = 23.4777240251
+        interface = C1 nio_tap:tap2
+    [[Cloud C1]]
+        x = -469.512193309
+        y = -50.3847763109
+        z = 1.0
+        connections = R1:f0/0:nio_tap:tap2
+    [[NOTE 32]]
+        text = "f0/0"
+        x = -39.5223692314
+        y = 22.8113905191
+        interface = R1 f0/0
+    [[NOTE 33]]
+        text = "s0/0"
+        x = 67.0390240313
+        y = 25.562147462
+        interface = R1 s0/0
+    [[SHAPE 1]]
+        type = ellipse
+        x = -182.433549546
+        y = -141.421356237
+        width = 346.482322781
+        height = 271.529003976
+        fill_color = "#c0ffff"
+        z = -3.0
+    [[SHAPE 2]]
+        type = ellipse
+        x = 118.793939239
+        y = -142.8355698
+        width = 320.208152802
+        height = 277.781745931
+        fill_color = "#c0ffc0"
+        z = -3.0
+    [[SHAPE 3]]
+        type = ellipse
+        x = 400.222438152
+        y = -175.362481734
+        width = 311.126983722
+        height = 200.0
+        fill_color = "#ffdca8"
+        z = -4.0

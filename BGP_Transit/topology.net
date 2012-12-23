@@ -1,0 +1,342 @@
+autostart = False
+version = 0.8.3.1
+[127.0.0.1:7200]
+    workingdir = /home/thomas/GNS3/Working
+    udp = 10000
+    [[2621]]
+        image = /home/thomas/GNS3/Images/c2600-adventerprisek9-mz.124-25b.image
+        ram = 128
+        idlepc = 0x805198a0
+        ghostios = True
+        chassis = 2621
+    [[ROUTER RTA]]
+        model = 2621
+        console = 2006
+        aux = 2506
+        cnfg = configs/RTA.cfg
+        f0/0 = ISP3 f1/0
+        x = -742.935208311
+        y = -22.0
+        z = 1.0
+    [[ROUTER ISP4]]
+        model = 2621
+        console = 2003
+        aux = 2503
+        cnfg = configs/ISP4.cfg
+        f0/0 = ISP2 f0/0
+        f0/1 = ISP1 f0/1
+        slot1 = NM-1FE-TX
+        f1/0 = RTB f0/0
+        x = 296.511760033
+        y = -23.4142135624
+        z = 1.0
+    [[ROUTER RTB]]
+        model = 2621
+        console = 2005
+        aux = 2505
+        cnfg = configs/RTB.cfg
+        f0/0 = ISP4 f1/0
+        x = 549.655987698
+        y = -23.4142135624
+        z = 1.0
+    [[ROUTER ISP1]]
+        model = 2621
+        console = 2002
+        aux = 2502
+        cnfg = configs/ISP1.cfg
+        f0/0 = ISP3 f0/0
+        f0/1 = ISP4 f0/1
+        slot1 = NM-1FE-TX
+        f1/0 = ISP2 f1/0
+        x = -106.539105243
+        y = -170.492424049
+        z = 1.0
+    [[ROUTER ISP2]]
+        model = 2621
+        console = 2004
+        aux = 2504
+        cnfg = configs/ISP2.cfg
+        f0/0 = ISP4 f0/0
+        f0/1 = ISP3 f0/1
+        slot1 = NM-1FE-TX
+        f1/0 = ISP1 f1/0
+        x = -106.539105243
+        y = 129.320851174
+        z = 1.0
+        hx = 13.0
+        hy = 42.8822509939
+    [[ROUTER ISP3]]
+        model = 2621
+        console = 2001
+        aux = 2501
+        cnfg = configs/ISP3.cfg
+        f0/0 = ISP1 f0/0
+        f0/1 = ISP2 f0/1
+        slot1 = NM-1FE-TX
+        f1/0 = RTA f0/0
+        x = -523.506709399
+        y = -22.3603896932
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = ".22"
+        x = 234.759451354
+        y = -62.4116882454
+    [[NOTE 2]]
+        text = "Area 2\nNSSA"
+        x = 145.663996924
+        y = -135.950793489
+    [[NOTE 3]]
+        text = ".21"
+        x = -12.7279220614
+        y = -151.507142675
+    [[NOTE 4]]
+        text = "Area 1\nNSSA"
+        x = -354.967604156
+        y = -131.708152802
+    [[NOTE 5]]
+        text = ".26"
+        x = 236.173664916
+        y = 35.1690475583
+    [[NOTE 6]]
+        text = "10.1.1.4"
+        x = 301.227488785
+        y = 24.6665222414
+    [[NOTE 7]]
+        text = ".25"
+        x = -14.1421356237
+        y = 129.921356237
+    [[NOTE 8]]
+        text = "10.1.1.2"
+        x = -45.2548339959
+        y = 173.359956417
+    [[NOTE 9]]
+        text = ".18"
+        x = -421.435641587
+        y = -0.186291501015
+    [[NOTE 10]]
+        text = "10.1.1.3"
+        x = -526.087445203
+        y = 26.4827560573
+    [[NOTE 11]]
+        text = "10.1.1.1"
+        x = -46.6690475583
+        y = -193.933549546
+    [[NOTE 12]]
+        text = ".17"
+        x = -161.220346111
+        y = 95.9802307404
+    [[NOTE 13]]
+        text = ".14"
+        x = -421.435641587
+        y = -27.0563491861
+    [[NOTE 14]]
+        text = ".13"
+        x = -161.220346111
+        y = -114.737590053
+    [[NOTE 15]]
+        text = ".10"
+        x = -67.8822509939
+        y = 59.2106781187
+    [[NOTE 16]]
+        text = ".9"
+        x = -63.6396103068
+        y = -97.7670273048
+    [[NOTE 17]]
+        text = "10.1.1.24/30"
+        x = 94.752308679
+        y = 84.4655121146
+    [[NOTE 18]]
+        text = "10.1.1.16/30"
+        x = -339.41125497
+        y = 32.1396103068
+    [[NOTE 19]]
+        text = "10.1.1.20/30"
+        x = 114.551298552
+        y = -95.1396103068
+    [[NOTE 20]]
+        text = "10.1.1.12/30"
+        x = -336.582827845
+        y = -55.3406204336
+    [[NOTE 21]]
+        text = "10.1.1.8/30"
+        x = -65.0538238692
+        y = -18.5710678119
+    [[NOTE 22]]
+        text = ".2"
+        x = 506.28845533
+        y = -33.1152236891
+    [[NOTE 23]]
+        text = ".1"
+        x = 376.180807591
+        y = -33.1152236891
+    [[NOTE 24]]
+        text = ".2"
+        x = -670.337228565
+        y = -29.8847763109
+    [[NOTE 25]]
+        text = ".1"
+        x = -558.614357137
+        y = -27.0563491861
+    [[NOTE 26]]
+        text = "10.2.2.0/30"
+        x = 405.879292401
+        y = -52.5121933088
+    [[NOTE 27]]
+        text = "10.0.0.0/30"
+        x = -646.295598005
+        y = -49.6837661841
+    [[NOTE 28]]
+        text = "lo0 172.16.0.1"
+        x = 633.567675943
+        y = -11.5
+    [[NOTE 29]]
+        text = "lo1 .129"
+        x = -849.942350986
+        y = 67.4949493661
+    [[NOTE 30]]
+        text = "lo1 .129"
+        x = 644.881384442
+        y = 73.3528137424
+    [[NOTE 31]]
+        text = "lo0 192.168.20.1"
+        x = -889.540330733
+        y = -12.9142135624
+    [[NOTE 32]]
+        text = "172.16.0.0/25"
+        x = 623.668181007
+        y = 46.4827560573
+    [[NOTE 33]]
+        text = "192.168.20.0/25"
+        x = -878.226622234
+        y = 39.4116882454
+    [[NOTE 34]]
+        text = "AS 300"
+        x = 636.396103068
+        y = -168.477705423
+    [[NOTE 35]]
+        text = "AS 200"
+        x = -241.830519166
+        y = -181.205627485
+    [[NOTE 36]]
+        text = "AS 100"
+        x = -831.557574675
+        y = -168.477705423
+    [[NOTE 37]]
+        text = "f0/0"
+        x = 78.6568002999
+        y = 27.5911582786
+        interface = RTA f0/0
+    [[NOTE 38]]
+        text = "f0/0"
+        x = -49.4264068712
+        y = 29.0710678119
+        interface = RTB f0/0
+    [[NOTE 39]]
+        text = "f0/0"
+        x = 88.7891775965
+        y = -36.0149198681
+        interface = ISP2 f0/0
+    [[NOTE 40]]
+        text = "f0/1"
+        x = -56.9159980345
+        y = 1.25469854708
+        interface = ISP2 f0/1
+    [[NOTE 41]]
+        text = "f1/0"
+        x = -6.59797974645
+        y = -70.3259018078
+        interface = ISP2 f1/0
+    [[NOTE 42]]
+        text = "f1/0"
+        x = 81.4852813742
+        y = 27.6568542495
+        interface = ISP4 f1/0
+    [[NOTE 43]]
+        text = "f0/0"
+        x = -63.8013709053
+        y = 22.0321638108
+        interface = ISP4 f0/0
+    [[NOTE 44]]
+        text = "f0/1"
+        x = -63.9732845527
+        y = 1.21687340557
+        interface = ISP4 f0/1
+    [[NOTE 45]]
+        text = "f0/1"
+        x = 91.7895183686
+        y = 56.9252622182
+        interface = ISP1 f0/1
+    [[NOTE 46]]
+        text = "f0/0"
+        x = -55.6037874303
+        y = 14.1773028669
+        interface = ISP1 f0/0
+    [[NOTE 47]]
+        text = "f1/0"
+        x = -8.01219330882
+        y = 70.4852813742
+        interface = ISP1 f1/0
+    [[NOTE 48]]
+        text = "f1/0"
+        x = -46.5979257969
+        y = 27.7225502204
+        interface = ISP3 f1/0
+    [[NOTE 49]]
+        text = "f0/1"
+        x = 98.8743674741
+        y = 58.301650639
+        interface = ISP3 f0/1
+    [[NOTE 50]]
+        text = "f0/0"
+        x = 100.390583995
+        y = -42.302194548
+        interface = ISP3 f0/0
+    [[SHAPE 1]]
+        type = rectangle
+        x = -920.854039232
+        y = -175.362481734
+        width = 250.31580054
+        height = 346.482322781
+        fill_color = "#ffffc0"
+        border_style = 0
+        z = -2.0
+    [[SHAPE 2]]
+        type = rectangle
+        x = 541.241774135
+        y = -175.563491861
+        width = 250.31580054
+        height = 346.482322781
+        fill_color = "#ffffc0"
+        border_style = 0
+        z = -2.0
+    [[SHAPE 3]]
+        type = ellipse
+        x = -234.759451354
+        y = -193.747258045
+        width = 322.440692221
+        height = 384.666088965
+        fill_color = "#00ffff"
+        border_style = 0
+        z = -2.0
+    [[SHAPE 4]]
+        type = ellipse
+        x = -14.3431457505
+        y = -133.13708499
+        width = 362.038671968
+        height = 268.700576851
+        fill_color = "#c0ffff"
+        border_style = 0
+        z = -3.0
+    [[SHAPE 5]]
+        type = ellipse
+        x = -500.63160108
+        y = -132.936074863
+        width = 362.038671968
+        height = 268.700576851
+        fill_color = "#00c0c0"
+        border_style = 0
+        z = -3.0

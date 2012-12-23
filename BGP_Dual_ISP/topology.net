@@ -1,0 +1,379 @@
+autostart = False
+version = 0.8.3.1
+[127.0.0.1:7200]
+    workingdir = /home/thomas/GNS3/Working
+    udp = 10000
+    [[2621]]
+        image = /home/thomas/GNS3/Images/c2600-adventerprisek9-mz.124-25b.image
+        ram = 128
+        idlepc = 0x805198a0
+        ghostios = True
+        chassis = 2621
+    [[ROUTER RTA1]]
+        model = 2621
+        console = 2001
+        aux = 2501
+        cnfg = configs/RTA1.cfg
+        f0/0 = ISP10 f0/0
+        f0/1 = ISP20 f0/1
+        slot1 = NM-1FE-TX
+        f1/0 = RTA2 f0/0
+        symbol = gateway
+        x = -460.369624409
+        y = -33.1177490061
+        z = 1.0
+    [[ROUTER RTA2]]
+        model = 2621
+        console = 2005
+        aux = 2505
+        cnfg = configs/RTA2.cfg
+        f0/0 = RTA1 f1/0
+        x = -748.592062561
+        y = -30.4852813742
+        z = 1.0
+    [[ROUTER ISP20]]
+        model = 2621
+        console = 2008
+        aux = 2504
+        cnfg = configs/ISP20.cfg
+        wic0/0 = WIC-2T
+        s0/0 = ISP10 s0/0
+        f0/0 = RTB1 f0/0
+        f0/1 = RTA1 f0/1
+        symbol = gateway
+        x = -137.651803616
+        y = 44.4680374315
+        z = 1.0
+        hx = 6.27207793864
+        hy = 55.6101730553
+    [[ROUTER ISP10]]
+        model = 2621
+        console = 2002
+        aux = 2502
+        cnfg = configs/ISP10.cfg
+        wic0/0 = WIC-2T
+        s0/0 = ISP20 s0/0
+        f0/0 = RTA1 f0/0
+        f0/1 = RTB1 f0/1
+        slot1 = NM-1FE-TX
+        f1/0 = nio_tap:tap2
+        symbol = gateway
+        x = -137.651803616
+        y = -101.195959493
+        z = 1.0
+        hx = 7.08578643763
+        hy = -23.5857864376
+    [[ROUTER RTB1]]
+        model = 2621
+        console = 2007
+        aux = 2503
+        cnfg = configs/RTB1.cfg
+        f0/0 = ISP20 f0/0
+        f0/1 = ISP10 f0/1
+        slot1 = NM-1FE-TX
+        f1/0 = RTB2 f0/1
+        symbol = gateway
+        x = 179.132034356
+        y = -33.313708499
+        z = 1.0
+    [[ROUTER RTB2]]
+        model = 2621
+        console = 2006
+        aux = 2506
+        cnfg = configs/RTB2.cfg
+        f0/1 = RTB1 f1/0
+        x = 494.501658765
+        y = -26.2426406871
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "10.0.0.0/30"
+        x = -330.925973595
+        y = -80.7964645563
+    [[NOTE 2]]
+        text = "lo1 .129"
+        x = 595.383909759
+        y = -15.7426406871
+    [[NOTE 3]]
+        text = "OSPF"
+        x = -612.354472508
+        y = -159.992424049
+    [[NOTE 4]]
+        text = ".1"
+        x = -172.53405461
+        y = -86.4533188058
+    [[NOTE 5]]
+        text = "172.20.0.128/25"
+        x = 572.756492761
+        y = -46.8553390593
+    [[NOTE 6]]
+        text = "10.1.1.4/30"
+        x = 18.3847763109
+        y = 46.2817459305
+    [[NOTE 7]]
+        text = "10.1.1.0/30"
+        x = -325.269119346
+        y = 40.8259018078
+    [[NOTE 8]]
+        text = "EIGRP"
+        x = 421.435641587
+        y = -165.649278299
+    [[NOTE 9]]
+        text = "172.20.0.0/24"
+        x = 395.979797464
+        y = -147.264501988
+    [[NOTE 10]]
+        text = ".1"
+        x = -497.803173955
+        y = -34.127416998
+    [[NOTE 11]]
+        text = ".2"
+        x = -667.50880144
+        y = -35.5416305603
+    [[NOTE 12]]
+        text = ".2"
+        x = -84.8528137424
+        y = 8.29898987322
+    [[NOTE 13]]
+        text = "172.30.0.0/24"
+        x = -59.3969696197
+        y = -151.507142675
+    [[NOTE 14]]
+        text = "10.2.2.0/30"
+        x = -84.8528137424
+        y = -17.1568542495
+    [[NOTE 15]]
+        text = ".1"
+        x = -84.8528137424
+        y = -41.1984848098
+    [[NOTE 16]]
+        text = "lo1 .1"
+        x = -35.3553390593
+        y = 129.720346111
+    [[NOTE 17]]
+        text = "172.32.0.0/24"
+        x = -63.6396103068
+        y = 150.933549546
+    [[NOTE 18]]
+        text = "lo1 .1"
+        x = -32.5269119346
+        y = -133.122366364
+    [[NOTE 19]]
+        text = ".2"
+        x = -388.908729653
+        y = 11.127416998
+    [[NOTE 20]]
+        text = ".5"
+        x = -57.9827560573
+        y = -89.2817459305
+    [[NOTE 21]]
+        text = ".5"
+        x = -57.9827560573
+        y = 69.1101730553
+    [[NOTE 22]]
+        text = ".6"
+        x = 141.421356237
+        y = -45.441125497
+    [[NOTE 23]]
+        text = ".6"
+        x = 142.8355698
+        y = 9.7132034356
+    [[NOTE 24]]
+        text = "172.20.0.0/30"
+        x = 311.126983722
+        y = -60.9974746831
+    [[NOTE 25]]
+        text = ".1"
+        x = 261.629509039
+        y = -32.7132034356
+    [[NOTE 26]]
+        text = ".2"
+        x = 455.376767084
+        y = -35.5416305603
+    [[NOTE 27]]
+        text = ".1"
+        x = -172.53405461
+        y = 67.6959594929
+    [[NOTE 28]]
+        text = "10.0.0.4/30"
+        x = 22.627416998
+        y = -69.6837661841
+    [[NOTE 29]]
+        text = ".2"
+        x = -388.908729653
+        y = -45.441125497
+    [[NOTE 30]]
+        text = "AS: 64556"
+        x = -147.078210487
+        y = -191.105122421
+    [[NOTE 31]]
+        text = "AS: 64555"
+        x = -599.626550446
+        y = -181.406637612
+    [[NOTE 32]]
+        text = "172.16.0.0/24"
+        x = -613.76868607
+        y = -138.779220614
+    [[NOTE 33]]
+        text = "172.16.0.0/30"
+        x = -620.839753882
+        y = -58.1690475583
+    [[NOTE 34]]
+        text = "AS: 64557"
+        x = -148.492424049
+        y = 169.318325857
+    [[NOTE 35]]
+        text = "AS: 64558"
+        x = 408.707719526
+        y = -181.607647738
+    [[NOTE 36]]
+        text = "Area 1"
+        x = -844.285496737
+        y = -110.494949366
+    [[NOTE 37]]
+        text = "lo1 .129"
+        x = -862.670273048
+        y = -31.2989898732
+    [[NOTE 38]]
+        text = "172.16.0.128/25"
+        x = -885.297690046
+        y = -59.5832611207
+    [[NOTE 39]]
+        text = "Area 0"
+        x = -560.0285707
+        y = -159.992424049
+    [[NOTE 40]]
+        text = "f0/1"
+        x = -48.0021702151
+        y = 25.7238304055
+        interface = RTB2 f0/1
+    [[NOTE 41]]
+        text = "f1/0"
+        x = 76.7326175934
+        y = 32.2614509687
+        interface = RTB1 f1/0
+    [[NOTE 42]]
+        text = "f0/1"
+        x = -81.5654153689
+        y = 7.80512795178
+        interface = RTB1 f0/1
+    [[NOTE 43]]
+        text = "f0/0"
+        x = -81.2994803467
+        y = 27.1386250846
+        interface = RTB1 f0/0
+    [[NOTE 44]]
+        text = "f1/0"
+        x = -38.6627637774
+        y = -21.0886387235
+        interface = ISP10 f1/0
+    [[NOTE 45]]
+        text = "f0/1"
+        x = 70.1978830007
+        y = 40.1238042364
+        interface = ISP10 f0/1
+    [[NOTE 46]]
+        text = "s0/0"
+        x = -20.438601595
+        y = 71.4233224575
+        interface = ISP10 s0/0
+    [[NOTE 47]]
+        text = "f0/0"
+        x = -40.5797490932
+        y = 39.9990408103
+        interface = ISP10 f0/0
+    [[NOTE 48]]
+        text = "f0/0"
+        x = 69.9319479785
+        y = -10.3223912687
+        interface = ISP20 f0/0
+    [[NOTE 49]]
+        text = "s0/0"
+        x = -20.627415583
+        y = -43.2933801426
+        interface = ISP20 s0/0
+    [[NOTE 50]]
+        text = "f0/1"
+        x = -41.7471769491
+        y = -12.9628291498
+        interface = ISP20 f0/1
+    [[NOTE 51]]
+        text = "f0/0"
+        x = 72.9980135994
+        y = 22.3986327914
+        interface = RTA2 f0/0
+    [[NOTE 52]]
+        text = "f1/0"
+        x = -48.5102069082
+        y = 32.7582214581
+        interface = RTA1 f1/0
+    [[NOTE 53]]
+        text = "f0/1"
+        x = 106.747176949
+        y = 25.5364222786
+        interface = RTA1 f0/1
+    [[NOTE 54]]
+        text = "f0/0"
+        x = 106.993962656
+        y = 9.34410494023
+        interface = RTA1 f0/0
+    [[NOTE 55]]
+        text = "nio_tap:tap2"
+        x = 31.7268248302
+        y = 21.2878572014
+        interface = C1 nio_tap:tap2
+    [[Cloud C1]]
+        x = -396.283837972
+        y = -191.977705423
+        hx = 73.0710678119
+        hy = 1.87005768509
+        z = 1.0
+        connections = ISP10:f1/0:nio_tap:tap2
+    [[SHAPE 1]]
+        type = rectangle
+        x = -274.558441227
+        y = 37.9827560573
+        width = 332.340187158
+        height = 155.563491861
+        fill_color = "#c0ffc0"
+        border_style = 0
+        z = -2.0
+    [[SHAPE 2]]
+        type = rectangle
+        x = -272.943217538
+        y = -195.161471607
+        width = 332.340187158
+        height = 155.563491861
+        fill_color = "#ffffc0"
+        border_style = 0
+        z = -2.0
+    [[SHAPE 3]]
+        type = ellipse
+        x = 175.362481734
+        y = -186.676190233
+        width = 564.271211387
+        height = 377.595021154
+        fill_color = "#dcdcdc"
+        border_style = 0
+        z = -2.0
+    [[SHAPE 4]]
+        type = ellipse
+        x = -725.491557497
+        y = -190.91883092
+        width = 333.75440072
+        height = 381.837661841
+        fill_color = "#c0ffff"
+        border_style = 0
+        z = -3.0
+    [[SHAPE 5]]
+        type = ellipse
+        x = -944.694659665
+        y = -111.722871427
+        width = 267.882250994
+        height = 200.0
+        fill_color = "#00ffff"
+        border_style = 0
+        z = -4.0
